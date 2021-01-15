@@ -1,1 +1,1 @@
-# music-lyrics-app
+# related-artists-app
