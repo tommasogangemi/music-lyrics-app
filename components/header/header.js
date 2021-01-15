@@ -2,7 +2,7 @@ const Header = () => {
 	return (
 		<div className='container pt-4 mb-5'>
 			<div className='row'>
-				<h1 className='col-12 font-weight-bold'>Search Related Artists</h1>
+				<h1 className='col-12 font-weight-bold'>Related Artists Research</h1>
 			</div>
 			<div className='row'>
 				<h5 className='col-12 text-muted'>
