@@ -46,7 +46,7 @@ const Home = () => {
 	return (
 		<div className='display'>
 			<Head>
-				<title>Search Related Artists</title>
+				<title>Related Artists Research</title>
 			</Head>
 
 			<Header />
