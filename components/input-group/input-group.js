@@ -11,7 +11,7 @@ const InputGroupContainer = ({ searchAlbums }) => {
 	};
 
 	const handleKeyDown = e => {
-		if (e.key === 'Enter' && title !== null) {
+		if (e.key === 'Enter') {
 			handleClick();
 		} else {
 			return;
@@ -19,17 +19,22 @@ const InputGroupContainer = ({ searchAlbums }) => {
 	};
 
 	const handleClick = () => {
-		const artistName = title.toLowerCase().split(' ').join('_');
-		searchAlbums(artistName);
+		if (title) {
+			const artistName = title.toLowerCase().split(' ').join('_');
+			searchAlbums(artistName);
 
-		setTitle('');
+			setTitle('');
+		} else {
+			return;
+		}
 	};
 
 	return (
-		<div className='container mt-5 mb-5'>
+		<div className='container mt-2 mb-2'>
 			<div className='row'>
 				<InputGroup className='mb-3 col-12'>
 					<FormControl
+						className='form-input'
 						placeholder='Type the title of the song'
 						aria-label="Recipient's username"
 						aria-describedby='basic-addon2'
@@ -38,7 +43,7 @@ const InputGroupContainer = ({ searchAlbums }) => {
 						onKeyDown={handleKeyDown}
 					/>
 					<InputGroup.Append>
-						<Button variant='outline-secondary' onClick={handleClick}>
+						<Button variant='outline-dark' onClick={handleClick}>
 							Search
 						</Button>
 					</InputGroup.Append>
