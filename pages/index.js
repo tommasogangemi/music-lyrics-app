@@ -13,6 +13,9 @@ const Home = () => {
 
 	const options = {
 		mode: 'no-cors',
+		headers: {
+			'Access-Control-Allow-Origin': '*',
+		},
 	};
 
 	const searchAlbums = async artist => {
