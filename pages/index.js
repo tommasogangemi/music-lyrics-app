@@ -12,10 +12,7 @@ const Home = () => {
 	const [didNotFind, setDidNotFind] = useState(false);
 
 	const options = {
-		mode: 'cors',
-		headers: {
-			'Access-Control-Allow-Origin': '*',
-		},
+		mode: 'no-cors',
 	};
 
 	const searchAlbums = async artist => {
