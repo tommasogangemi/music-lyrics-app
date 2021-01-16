@@ -11,13 +11,21 @@ const Home = () => {
 	const [relatedArtists, setRelatedArtists] = useState([]);
 	const [didNotFind, setDidNotFind] = useState(false);
 
+	const options = {
+		mode: 'cors',
+		headers: {
+			'Access-Control-Allow-Origin': '*',
+		},
+	};
+
 	const searchAlbums = async artist => {
 		setRelatedArtists([]);
 		setDidNotFind(false);
 
 		try {
 			const artistRes = await fetch(
-				`https://api.musixmatch.com/ws/1.1/artist.search?q_artist=${artist}&apikey=${apiKey}`
+				`https://api.musixmatch.com/ws/1.1/artist.search?q_artist=${artist}&apikey=${apiKey}`,
+				options
 			);
 			const artistData = await artistRes.json();
 			if (!artistData.message.body.artist_list.length) {
@@ -29,7 +37,8 @@ const Home = () => {
 				.artist_id;
 
 			const relatedRes = await fetch(
-				`https://api.musixmatch.com/ws/1.1/artist.related.get?artist_id=${artistId}&page_size=6&page=1&apikey=${apiKey}`
+				`https://api.musixmatch.com/ws/1.1/artist.related.get?artist_id=${artistId}&page_size=6&page=1&apikey=${apiKey}`,
+				options
 			);
 			const relatedData = await relatedRes.json();
 			if (!relatedData.message.body.artist_list.length) {
