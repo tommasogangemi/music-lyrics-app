@@ -12,7 +12,7 @@ const Home = () => {
 	const [didNotFind, setDidNotFind] = useState(false);
 
 	const options = {
-		mode: 'no-cors',
+		mode: 'cors',
 		headers: {
 			'Access-Control-Allow-Origin': '*',
 		},
