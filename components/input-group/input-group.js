@@ -35,7 +35,7 @@ const InputGroupContainer = ({ searchAlbums }) => {
 				<InputGroup className='mb-3 col-12'>
 					<FormControl
 						className='form-input'
-						placeholder='Type the title of the song'
+						placeholder='Type the name of the Artist'
 						aria-label="Recipient's username"
 						aria-describedby='basic-addon2'
 						value={title}
