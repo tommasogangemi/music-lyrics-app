@@ -11,13 +11,6 @@ const Home = () => {
 	const [relatedArtists, setRelatedArtists] = useState([]);
 	const [didNotFind, setDidNotFind] = useState(false);
 
-	const options = {
-		mode: 'cors',
-		headers: {
-			'Access-Control-Allow-Origin': '*',
-		},
-	};
-
 	const searchAlbums = async artist => {
 		setRelatedArtists([]);
 		setDidNotFind(false);
@@ -46,7 +39,7 @@ const Home = () => {
 
 			setRelatedArtists(relatedData.message.body.artist_list);
 		} catch (error) {
-			console.log(error);
+			console.log('Error was caught:', error.message);
 		}
 	};
 
